@@ -60,6 +60,6 @@ describe('Retorno da lista de animais', ()=>{
     it('deve retornar uma lista com todos os animais', async () => {
         const res = await request(app).get('/animais');
         expect(res.status).toBe(200);
-        expect(res.body.length).toBe(3);
+        expect(res.body.length).toBe(3); 
     });
 });
