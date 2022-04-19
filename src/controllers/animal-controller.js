@@ -10,8 +10,14 @@ exports.post = (req, res, next) => {
   const idade = req.query.idade;
 
   // Validações
+  if(nome.length < 2) {
+    res.status(400).send({'mensagem': 'O nome deve ter pelo menos 2 caracteres.'});
+    return; 
+  }
+
   if (isNaN(idade)) {
     res.status(400).send({'mensagem': 'A idade do animal deve ser um número.'});
+    return;
   }
 
   // Novo animal a ser inserido
